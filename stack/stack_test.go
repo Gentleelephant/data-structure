@@ -1,6 +1,9 @@
 package stack
 
-import "testing"
+import (
+	"github.com/Gentleelephant/data-structure/sort"
+	"testing"
+)
 
 func TestStack(t *testing.T) {
 	stack := Stack{}
@@ -11,4 +14,9 @@ func TestStack(t *testing.T) {
 	t.Log(stack.Pop())
 	t.Log(stack.Pop())
 	t.Log(stack.Pop())
+}
+
+func TestName(t *testing.T) {
+	quickSort := sort.QuickSort([]int{1, 2, 3, 4, 6, 5, 7, 8, 9, 10})
+	t.Log(quickSort)
 }
