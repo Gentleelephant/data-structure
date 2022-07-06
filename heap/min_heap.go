@@ -1,28 +1,32 @@
 package heap
 
-type IntHeap []int
+// Push 和 Pop 方法需要使用指针，因为它们会修改 slice 的长度，而不仅仅只内容。
 
-func (h IntHeap) Len() int {
-	return len(h)
+type MinHeap struct {
+	arr []int
 }
 
-func (h IntHeap) Less(i, j int) bool {
+func (h MinHeap) Len() int {
+	return len(h.arr)
+}
+
+func (h MinHeap) Less(i, j int) bool {
 	// h[i] < h[j] 为小顶堆，大顶堆为 h[i] > h[j]
-	return h[i] < h[j]
+	return h.arr[i] < h.arr[j]
 }
 
-func (h IntHeap) Swap(i, j int) {
-	h[i], h[j] = h[j], h[i]
+func (h MinHeap) Swap(i, j int) {
+	h.arr[i], h.arr[j] = h.arr[j], h.arr[i]
 }
 
-func (h *IntHeap) Push(x interface{}) {
-	*h = append(*h, x.(int))
+func (h *MinHeap) Push(x interface{}) {
+	h.arr = append(h.arr, x.(int))
 }
 
-func (h *IntHeap) Pop() interface{} {
-	old := *h
+func (h *MinHeap) Pop() interface{} {
+	old := h.arr
 	n := len(old)
 	x := old[n-1]
-	*h = old[0 : n-1]
+	h.arr = old[0 : n-1]
 	return x
 }

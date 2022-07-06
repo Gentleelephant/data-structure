@@ -1,23 +1,29 @@
 package heap
 
 import (
-	"container/heap"
-	"fmt"
 	"testing"
 )
 
 func TestMinHeap(t *testing.T) {
 
-	h := &IntHeap{1, 2, 9, 4, 5, 6, 3, 8, 0, 10}
-
-	heap.Init(h)
-
-	heap.Push(h, -1)
-
-	fmt.Println("min heap:", (*h)[0])
-
-	for h.Len() > 0 {
-		fmt.Println(heap.Pop(h))
-	}
+	//
+	//heap.Init(&minHeap)
+	//
+	//heap.Push(&minHeap, -1)
+	//
+	//fmt.Println("min head len:", minHeap.Len())
+	//
+	//heap.Push(&minHeap, -10)
+	//
+	//fmt.Println("min head len:", minHeap.Len())
+	//
+	//pop := minHeap.Pop()
+	//
+	//fmt.Println("min:", pop)
+	//
+	//pop = minHeap.Pop()
+	//
+	//fmt.Println("min:", pop)
+	//fmt.Println("min heap:", minHeap.Pop())
 
 }
